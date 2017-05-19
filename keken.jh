@@ -1,0 +1,42 @@
+#title: keken
+entity Biere{
+	nom String required,
+    type TypeBiere,
+	degreeAlc Float,
+	brasseur String,
+	pays String,
+	ville String,
+	image String
+}
+
+enum TypeBiere {
+	BLONDE,
+    BRUNE,
+    AMBRE
+}
+
+entity Commentaire {
+	note Float,
+	commentaire String
+}
+
+relationship ManyToOne {
+	Commentaire{commentaires} to Biere{biere},
+    Commentaire{commentaires} to UserExtra
+}
+
+entity UserExtra {
+	image String
+}
+
+relationship OneToMany {
+	UserExtra to Biere{bieresLikes}
+}
+
+relationship OneToOne {
+	UserExtra to Biere{biereFavorite}
+}
+
+relationship ManyToMany {
+	UserExtra to UserExtra{amis}
+}
