@@ -1,0 +1,63 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "usersFavs",
+            "otherEntityName": "userExtra",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "biereFavorite"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "usersLikes",
+            "otherEntityName": "userExtra",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "commentaires",
+            "otherEntityName": "commentaire",
+            "otherEntityRelationshipName": "biere"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "TypeBiere",
+            "fieldValues": "BLONDE,BRUNE,AMBRE"
+        },
+        {
+            "fieldName": "degreeAlc",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "brasseur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pays",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ville",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "image",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170519224211",
+    "entityTableName": "biere",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

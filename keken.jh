@@ -21,8 +21,8 @@ entity Commentaire {
 }
 
 relationship ManyToOne {
-	Commentaire{commentaires} to Biere{biere},
-    Commentaire{commentaires} to UserExtra
+	Commentaire{biere} to Biere{commentaires},
+    Commentaire{user} to UserExtra{commentaires}
 }
 
 entity UserExtra {
@@ -30,13 +30,13 @@ entity UserExtra {
 }
 
 relationship OneToMany {
-	UserExtra to Biere{bieresLikes}
+	UserExtra{bieresLikes} to Biere{usersLikes}
 }
 
 relationship OneToOne {
-	UserExtra to Biere{biereFavorite}
+	UserExtra{biereFavorite} to Biere{usersFavs}
 }
 
 relationship ManyToMany {
-	UserExtra to UserExtra{amis}
+	UserExtra{amis} to UserExtra{user}
 }

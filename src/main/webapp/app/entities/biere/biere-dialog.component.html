@@ -1,0 +1,82 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myBiereLabel" jhiTranslate="kekenApp.biere.home.createOrEditLabel">Create or edit a Biere</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!biere.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="biere.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kekenApp.biere.nom" for="field_nom">Nom</label>
+            <input type="text" class="form-control" name="nom" id="field_nom"
+                [(ngModel)]="biere.nom"
+            required />
+            <div [hidden]="!(editForm.controls.nom?.dirty && editForm.controls.nom?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.nom?.errors?.required" jhiTranslate="entity.validation.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kekenApp.biere.type" for="field_type">Type</label>
+            <select class="form-control" name="type" [(ngModel)]="biere.type" id="field_type" >
+                <option value="BLONDE" jhiTranslate="kekenApp.TypeBiere.BLONDE">BLONDE</option>
+                <option value="BRUNE" jhiTranslate="kekenApp.TypeBiere.BRUNE">BRUNE</option>
+                <option value="AMBRE" jhiTranslate="kekenApp.TypeBiere.AMBRE">AMBRE</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kekenApp.biere.degreeAlc" for="field_degreeAlc">Degree Alc</label>
+            <input type="number" class="form-control" name="degreeAlc" id="field_degreeAlc"
+                [(ngModel)]="biere.degreeAlc"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kekenApp.biere.brasseur" for="field_brasseur">Brasseur</label>
+            <input type="text" class="form-control" name="brasseur" id="field_brasseur"
+                [(ngModel)]="biere.brasseur"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kekenApp.biere.pays" for="field_pays">Pays</label>
+            <input type="text" class="form-control" name="pays" id="field_pays"
+                [(ngModel)]="biere.pays"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kekenApp.biere.ville" for="field_ville">Ville</label>
+            <input type="text" class="form-control" name="ville" id="field_ville"
+                [(ngModel)]="biere.ville"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="kekenApp.biere.image" for="field_image">Image</label>
+            <input type="text" class="form-control" name="image" id="field_image"
+                [(ngModel)]="biere.image"
+             />
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="kekenApp.biere.usersLikes" for="field_usersLikes">Users Likes</label>
+            <select class="form-control" id="field_usersLikes" name="usersLikes" [(ngModel)]="biere.usersLikes" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="userExtraOption.id === biere.usersLikes?.id ? biere.usersLikes : userExtraOption" *ngFor="let userExtraOption of userextras; trackBy: trackUserExtraById">{{userExtraOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

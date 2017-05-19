@@ -1,0 +1,55 @@
+
+<div *ngIf="biere">
+    <h2><span jhiTranslate="kekenApp.biere.detail.title">Biere</span> {{biere.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="kekenApp.biere.nom">Nom</span></dt>
+        <dd>
+            <span>{{biere.nom}}</span>
+        </dd>
+        <dt><span jhiTranslate="kekenApp.biere.type">Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'kekenApp.TypeBiere.' + biere.type}}">{{biere.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="kekenApp.biere.degreeAlc">Degree Alc</span></dt>
+        <dd>
+            <span>{{biere.degreeAlc}}</span>
+        </dd>
+        <dt><span jhiTranslate="kekenApp.biere.brasseur">Brasseur</span></dt>
+        <dd>
+            <span>{{biere.brasseur}}</span>
+        </dd>
+        <dt><span jhiTranslate="kekenApp.biere.pays">Pays</span></dt>
+        <dd>
+            <span>{{biere.pays}}</span>
+        </dd>
+        <dt><span jhiTranslate="kekenApp.biere.ville">Ville</span></dt>
+        <dd>
+            <span>{{biere.ville}}</span>
+        </dd>
+        <dt><span jhiTranslate="kekenApp.biere.image">Image</span></dt>
+        <dd>
+            <span>{{biere.image}}</span>
+        </dd>
+        <dt><span jhiTranslate="kekenApp.biere.usersLikes">Users Likes</span></dt>
+        <dd>
+            <div *ngIf="biere.usersLikes">
+                <a [routerLink]="['/user-extra', biere.usersLikes?.id]">{{biere.usersLikes?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'biere/'+ biere.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

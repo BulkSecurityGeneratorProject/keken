@@ -1,0 +1,27 @@
+{
+    "kekenApp": {
+        "userExtra" : {
+            "home": {
+                "title": "User Extras",
+                "createLabel": "User Extra erstellen",
+                "createOrEditLabel": "User Extra erstellen oder bearbeiten",
+                "search": "Suche nach User Extra"
+            },
+            "created": "User Extra erstellt mit ID {{ param }}",
+            "updated": "User Extra aktualisiert mit ID {{ param }}",
+            "deleted": "User Extra gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll User Extra {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "User Extra"
+            },
+            "image": "Image",
+            "biereFavorite": "Biere Favorite",
+            "bieresLikes": "Bieres Likes",
+            "amis": "Amis",
+            "commentaires": "Commentaires",
+            "user": "User"
+        }
+    }
+}

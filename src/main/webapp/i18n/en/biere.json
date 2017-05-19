@@ -1,0 +1,31 @@
+{
+    "kekenApp": {
+        "biere" : {
+            "home": {
+                "title": "Bieres",
+                "createLabel": "Create a new Biere",
+                "createOrEditLabel": "Create or edit a Biere",
+                "search": "Search for Biere"
+            },
+            "created": "A new Biere is created with identifier {{ param }}",
+            "updated": "A Biere is updated with identifier {{ param }}",
+            "deleted": "A Biere is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Biere {{ id }}?"
+            },
+            "detail": {
+                "title": "Biere"
+            },
+            "nom": "Nom",
+            "type": "Type",
+            "degreeAlc": "Degree Alc",
+            "brasseur": "Brasseur",
+            "pays": "Pays",
+            "ville": "Ville",
+            "image": "Image",
+            "usersFavs": "Users Favs",
+            "usersLikes": "Users Likes",
+            "commentaires": "Commentaires"
+        }
+    }
+}

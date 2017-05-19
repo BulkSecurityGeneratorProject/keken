@@ -1,0 +1,31 @@
+{
+    "kekenApp": {
+        "biere" : {
+            "home": {
+                "title": "Bieres",
+                "createLabel": "Biere erstellen",
+                "createOrEditLabel": "Biere erstellen oder bearbeiten",
+                "search": "Suche nach Biere"
+            },
+            "created": "Biere erstellt mit ID {{ param }}",
+            "updated": "Biere aktualisiert mit ID {{ param }}",
+            "deleted": "Biere gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Biere {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Biere"
+            },
+            "nom": "Nom",
+            "type": "Type",
+            "degreeAlc": "Degree Alc",
+            "brasseur": "Brasseur",
+            "pays": "Pays",
+            "ville": "Ville",
+            "image": "Image",
+            "usersFavs": "Users Favs",
+            "usersLikes": "Users Likes",
+            "commentaires": "Commentaires"
+        }
+    }
+}

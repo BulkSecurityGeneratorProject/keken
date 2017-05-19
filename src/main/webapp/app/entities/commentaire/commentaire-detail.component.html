@@ -1,0 +1,41 @@
+
+<div *ngIf="commentaire">
+    <h2><span jhiTranslate="kekenApp.commentaire.detail.title">Commentaire</span> {{commentaire.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="kekenApp.commentaire.note">Note</span></dt>
+        <dd>
+            <span>{{commentaire.note}}</span>
+        </dd>
+        <dt><span jhiTranslate="kekenApp.commentaire.commentaire">Commentaire</span></dt>
+        <dd>
+            <span>{{commentaire.commentaire}}</span>
+        </dd>
+        <dt><span jhiTranslate="kekenApp.commentaire.biere">Biere</span></dt>
+        <dd>
+            <div *ngIf="commentaire.biere">
+                <a [routerLink]="['/biere', commentaire.biere?.id]">{{commentaire.biere?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="kekenApp.commentaire.user">User</span></dt>
+        <dd>
+            <div *ngIf="commentaire.user">
+                <a [routerLink]="['/user-extra', commentaire.user?.id]">{{commentaire.user?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'commentaire/'+ commentaire.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

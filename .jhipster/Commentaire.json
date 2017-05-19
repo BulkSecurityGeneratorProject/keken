@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "biere",
+            "otherEntityName": "biere",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "user",
+            "otherEntityName": "userExtra",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "note",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "commentaire",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170519224212",
+    "entityTableName": "commentaire",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

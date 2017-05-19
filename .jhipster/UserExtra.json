@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "biereFavorite",
+            "otherEntityName": "biere",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "usersFavs"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "bieresLikes",
+            "otherEntityName": "biere",
+            "otherEntityRelationshipName": "usersLikes"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "user",
+            "relationshipName": "amis",
+            "otherEntityName": "userExtra",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "commentaires",
+            "otherEntityName": "commentaire",
+            "otherEntityRelationshipName": "user"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "user",
+            "otherEntityName": "userExtra",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "amis"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "image",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170519224213",
+    "entityTableName": "user_extra",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
